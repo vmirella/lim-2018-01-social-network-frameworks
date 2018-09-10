@@ -3,6 +3,11 @@
 # dependencies
 /node_modules
 
+<<<<<<< HEAD
+=======
+/package-lock.json
+
+>>>>>>> 43a946f4b0400efb28d1fc938b03a45c09a1f82d
 # testing
 /coverage
 
