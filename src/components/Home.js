@@ -5,39 +5,39 @@ const Home = () => {
   document.body.style.backgroundColor = '#F6F6F6';
   return (
     <div>
-      <nav class="navbar fixed-top navbar-expand-md navbar-light">
-        <span class="logo-home">
-          <i class="fas fa-paw"></i>
+      <nav className="navbar fixed-top navbar-expand-md navbar-light">
+        <span className="logo-home">
+          <i className="fas fa-paw"></i>
         </span>
-        <a class="navbar-brand" href="#">SoyTuPata</a>
-        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu"
+        <a className="navbar-brand" href="#">SoyTuPata</a>
+        <button className="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu"
           aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+          <span className="navbar-toggler-icon"></span>
         </button>
 
-        <div class="navbar-collapse collapse" id="navbar-menu">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active" id="home-menu">
-              <a class="nav-link" href="home.html">Inicio
-                <span class="sr-only">(current)</span>
+        <div className="navbar-collapse collapse" id="navbar-menu">
+          <ul className="navbar-nav mr-auto">
+            <li className="nav-item active" id="home-menu">
+              <a className="nav-link" href="home.html">Inicio
+                <span className="sr-only">(current)</span>
               </a>
             </li>
-            <li class="nav-item" id="profile-menu">
-              <a id="my-posts" class="nav-link" href="#">Mi Perfil</a>
+            <li className="nav-item" id="profile-menu">
+              <a id="my-posts" className="nav-link" href="#">Mi Perfil</a>
             </li>
-            <li class="nav-item">
-              <a id="logOut" class="nav-link" href="#">Salir</a>
+            <li className="nav-item">
+              <a id="logOut" className="nav-link" href="#">Salir</a>
             </li>
           </ul>
-          <div class="col-xl-3 col-lg-4 col-md-4 col-sm-12">
-            <div class="input-group">
-              <input type="text" id="input-element" class="form-control" placeholder="Buscar" />
-              <span class="input-group-btn">
-                <button class="btn btn-light" id="search-button" type="button">
-                  <img src="img/search.png" alt="" class="search-img" />
+          <div className="col-xl-3 col-lg-4 col-md-4 col-sm-12">
+            <div className="input-group">
+              <input type="text" id="input-element" className="form-control" placeholder="Buscar" />
+              <span className="input-group-btn">
+                <button className="btn btn-light" id="search-button" type="button">
+                  <img src="img/search.png" alt="" className="search-img" />
                 </button>
-                <button class="btn btn-light" id="search-button-post" type="button">
-                  <img src="img/search.png" alt="" class="search-img" />
+                <button className="btn btn-light" id="search-button-post" type="button">
+                  <img src="img/search.png" alt="" className="search-img" />
                 </button>
               </span>
             </div>

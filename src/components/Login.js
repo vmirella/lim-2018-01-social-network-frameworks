@@ -20,67 +20,67 @@ $(document).ready(function () {
 
 const Login = () => {
   return (
-    <div class="div-container">
-      <div class="login-btn splits">
+    <div className="div-container">
+      <div className="login-btn splits">
         <p>¿Ya tienes una cuenta?</p>
-        <button class="active button" id="linkLogin">Ingresar</button>
+        <button className="active button" id="linkLogin">Ingresar</button>
       </div>
-      <div class="rgstr-btn splits">
+      <div className="rgstr-btn splits">
         <p>¿A&uacute;n no tienes cuenta?</p>
-        <button class="button">Registrarse</button>
+        <button className="button">Registrarse</button>
       </div>
-      <div class="wrapper">
+      <div className="wrapper">
 
-        <div id="login" class="col-xl-12 col-lg-12 col-md-12 col-sm-12 panel-login">
-          <div class="logo">
+        <div id="login" className="col-xl-12 col-lg-12 col-md-12 col-sm-12 panel-login">
+          <div className="logo">
             <span>
-              <i class="fas fa-paw"></i>
+              <i className="fas fa-paw"></i>
             </span>
           </div>
-          <h2 class="text-center social-name">SoyTuPata</h2>
+          <h2 className="text-center social-name">SoyTuPata</h2>
           <form>
-            <div class="form-group">
-              <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Correo" />
+            <div className="form-group">
+              <input type="email" className="form-control" id="email" aria-describedby="emailHelp" placeholder="Correo" />
             </div>
-            <div class="form-group">
-              <input type="password" class="form-control" id="password" placeholder="Contrase&ntilde;a" />
+            <div className="form-group">
+              <input type="password" className="form-control" id="password" placeholder="Contrase&ntilde;a" />
             </div>
-            <button type="button" class="btn btn-success" id="button-login">Ingresar</button>
+            <button type="button" className="btn btn-success" id="button-login">Ingresar</button>
           </form>
-          <p class="lines">O</p>
+          <p className="lines">O</p>
           <div id="eventLogin">
-            <button type="button" class="btn btn-primary button-facebook" id="loginFacebook">
+            <button type="button" className="btn btn-primary button-facebook" id="loginFacebook">
               <span>
-                <i class="fab fa-facebook-f"></i>
+                <i className="fab fa-facebook-f"></i>
               </span>Ingresar con facebook</button>
-            <button type="button" class="btn btn-danger button-google" id="loginGoogle">
+            <button type="button" className="btn btn-danger button-google" id="loginGoogle">
               <span>
-                <i class="fab fa-google"></i>
+                <i className="fab fa-google"></i>
               </span>Ingresar con google</button>
           </div>
         </div>
 
-        <div id="register" class="col-xl-12 col-lg-12 col-md-12 col-sm-12 panel-login">
-          <div class="logo">
+        <div id="register" className="col-xl-12 col-lg-12 col-md-12 col-sm-12 panel-login">
+          <div className="logo">
             <span>
-              <i class="fas fa-paw"></i>
+              <i className="fas fa-paw"></i>
             </span>
           </div>
-          <h2 class="text-center social-name">SoyTuPata</h2>
+          <h2 className="text-center social-name">SoyTuPata</h2>
           <form>
-            <div class="form-group">
-              <input type="email" class="form-control" id="names" aria-describedby="emailHelp" placeholder="Nombres" />
+            <div className="form-group">
+              <input type="email" className="form-control" id="names" aria-describedby="emailHelp" placeholder="Nombres" />
             </div>
-            <div class="form-group">
-              <input type="email" class="form-control" id="lastnames" placeholder="Apellidos" />
+            <div className="form-group">
+              <input type="email" className="form-control" id="lastnames" placeholder="Apellidos" />
             </div>
-            <div class="form-group">
-              <input type="email" class="form-control" id="emailRegister" placeholder="Correo" />
+            <div className="form-group">
+              <input type="email" className="form-control" id="emailRegister" placeholder="Correo" />
             </div>
-            <div class="form-group">
-              <input type="password" class="form-control" id="passRegister" placeholder="Contrase&ntilde;a" />
+            <div className="form-group">
+              <input type="password" className="form-control" id="passRegister" placeholder="Contrase&ntilde;a" />
             </div>
-            <button type="button" class="btn btn-success" id="buttonRegister">Registrar</button>
+            <button type="button" className="btn btn-success" id="buttonRegister">Registrar</button>
           </form>
         </div>
 
