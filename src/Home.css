@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Chela+One');
 body {
 	height: 100%;
-	/*background-color: #F6F6F6;*/
+	background-color: #F6F6F6;
 }
 
 .hidden {
@@ -72,6 +72,7 @@ body {
 
 .container-new-post {
 	margin-top: 70px;
+	background-color: #F6F6F6;
 }
 /*#buttons-category{
 	display: none;
