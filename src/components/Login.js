@@ -31,14 +31,6 @@ const Logo = () => {
   )
 }
 
-const Input = ({ type, id, text }) => {
-  return (
-    <div className="form-group">
-      <input type={type} className="form-control" id={id} placeholder={text} />
-    </div>
-  )
-}
-
 const Button = ({text}) => {
   return (
     <button className="btn btn-success" id="buttonRegister">{text}</button>
@@ -48,20 +40,35 @@ const Button = ({text}) => {
 const Signin = () => {
   return (
     <form>
-      <Input type="text" id="names" text="Nombres" />
+      <div className="form-group">
+      <input type="text" className="form-control" placeholder="Nombres" />
+    </div>
+    {/* <div className="form-group">
+      <input type="text" className="form-control" placeholder={text} />
+    </div> */}
+    {/* <div className="form-group">
+      <input type={type} className="form-control" placeholder={text} />
+    </div>
+    <div className="form-group">
+      <input type={type} className="form-control" placeholder={text} />
+    </div>
+    <div className="form-group">
+      <input type={type} className="form-control" placeholder={text} />
+    </div> */}
+      {/* <Input type="text" id="names" text="Nombres" />
       <Input type="text" id="lastNames" text="Apellidos" />
       <Input type="email" id="emailRegister" text="Correo" />
       <Input type="password" id="passRegister" text="Contrase&ntilde;a" />
-      <Button text="Registrar" />
+      <Button text="Registrar" /> */}
     </form>
   )
 }
 
-const Login = () => {
+const FormLogin = () => {
   return (
     <form>
-      <Input type="email" id="email" text="Correo" />
-      <Input type="password" id="password" text="Contrase&ntilde;a" />
+      {/* <Input type="email" id="email" text="Correo" />
+      <Input type="password" id="password" text="Contrase&ntilde;a" /> */}
       <Button text="Ingresar" />
     </form>
   )
@@ -86,7 +93,7 @@ const Login = () => {
 
         <div id="login" className="col-12 panel-login">
           <Logo />
-          <Login />
+          <FormLogin />
           <p className="lines">O</p>
           <div id="eventLogin">
             <button type="button" className="btn btn-primary button-facebook" id="loginFacebook">
