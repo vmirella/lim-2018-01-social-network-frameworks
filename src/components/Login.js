@@ -18,9 +18,62 @@ $(document).ready(function () {
   });
 });
 
+const Logo = () => {
+  return (
+    <div>
+      <div className="logo">
+        <span>
+          <i className="fas fa-paw"></i>
+        </span>
+      </div>
+      <h2 className="text-center social-name">SoyTuPata</h2>
+    </div>
+  )
+}
+
+const Input = ({ type, id, text }) => {
+  return (
+    <div className="form-group">
+      <input type={type} className="form-control" id={id} placeholder={text} />
+    </div>
+  )
+}
+
+const Button = ({text}) => {
+  return (
+    <button className="btn btn-success" id="buttonRegister">{text}</button>
+  )
+}
+
+const Signin = () => {
+  return (
+    <form>
+      <Input type="text" id="names" text="Nombres" />
+      <Input type="text" id="lastNames" text="Apellidos" />
+      <Input type="email" id="emailRegister" text="Correo" />
+      <Input type="password" id="passRegister" text="Contrase&ntilde;a" />
+      <Button text="Registrar" />
+    </form>
+  )
+}
+
 const Login = () => {
   return (
-    <div className="div-container">
+    <form>
+      <Input type="email" id="email" text="Correo" />
+      <Input type="password" id="password" text="Contrase&ntilde;a" />
+      <Button text="Ingresar" />
+    </form>
+  )
+}
+
+const ButtonFG = ({ }) => {
+
+}
+
+const Login = () => {
+  return (
+    <div className="div-container" >
       <div className="login-btn splits">
         <p>¿Ya tienes una cuenta?</p>
         <button className="active button" id="linkLogin">Ingresar</button>
@@ -31,22 +84,9 @@ const Login = () => {
       </div>
       <div className="wrapper">
 
-        <div id="login" className="col-xl-12 col-lg-12 col-md-12 col-sm-12 panel-login">
-          <div className="logo">
-            <span>
-              <i className="fas fa-paw"></i>
-            </span>
-          </div>
-          <h2 className="text-center social-name">SoyTuPata</h2>
-          <form>
-            <div className="form-group">
-              <input type="email" className="form-control" id="email" aria-describedby="emailHelp" placeholder="Correo" />
-            </div>
-            <div className="form-group">
-              <input type="password" className="form-control" id="password" placeholder="Contrase&ntilde;a" />
-            </div>
-            <button type="button" className="btn btn-success" id="button-login">Ingresar</button>
-          </form>
+        <div id="login" className="col-12 panel-login">
+          <Logo />
+          <Login />
           <p className="lines">O</p>
           <div id="eventLogin">
             <button type="button" className="btn btn-primary button-facebook" id="loginFacebook">
@@ -60,33 +100,14 @@ const Login = () => {
           </div>
         </div>
 
-        <div id="register" className="col-xl-12 col-lg-12 col-md-12 col-sm-12 panel-login">
-          <div className="logo">
-            <span>
-              <i className="fas fa-paw"></i>
-            </span>
-          </div>
-          <h2 className="text-center social-name">SoyTuPata</h2>
-          <form>
-            <div className="form-group">
-              <input type="email" className="form-control" id="names" aria-describedby="emailHelp" placeholder="Nombres" />
-            </div>
-            <div className="form-group">
-              <input type="email" className="form-control" id="lastnames" placeholder="Apellidos" />
-            </div>
-            <div className="form-group">
-              <input type="email" className="form-control" id="emailRegister" placeholder="Correo" />
-            </div>
-            <div className="form-group">
-              <input type="password" className="form-control" id="passRegister" placeholder="Contrase&ntilde;a" />
-            </div>
-            <button type="button" className="btn btn-success" id="buttonRegister">Registrar</button>
-          </form>
+        <div id="register" className="col-12 panel-login">
+          <Logo />
+          <Signin />
         </div>
 
       </div>
     </div>
-  );
+  )
 };
 
 export default Login;
