@@ -154,14 +154,16 @@ body {
 }
 /* ----------------------movimiento de formularios---------------------- */
 body{
-	background: #009E66;
+	background-color: #009E66;
 	transition: all .5s;
 	padding: 1px;
 }
 .div-container{
 	width: 70%;
-	margin: 100px auto;
-	background: rgba(255,255,255,.5);
+  margin: 100px auto;
+ 
+  background: rgba(255,255,255,.5);
+  background-color: #009E66;
 	min-height: 400px;
 	display:table;
 	position: relative;
