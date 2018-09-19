@@ -1,6 +1,7 @@
 import React from 'react';
 import $ from 'jquery';
 import '../Login.css';
+import firebase from 'firebase'
 
 $(document).ready(function () {
   $('.div-container .rgstr-btn button').click(function () {
@@ -29,51 +30,6 @@ const Logo = () => {
       <h2 className="text-center social-name">SoyTuPata</h2>
     </div>
   )
-}
-
-class FormSignin extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      name: '',
-      lastname: '',
-      email: '',
-      password: ''
-    }
-    this.handleOnChange = this.handleOnChange.bind(this)
-    this.handleSubmit = this.handleSubmit.bind(this)
-  }
-
-  handleOnChange(e) {
-    this.setState({
-      [e.target.name]: e.target.value
-    })
-  }
-
-  handleSubmit(e) {
-    e.preventDefault();
-    console.log(this.state)
-  }
-
-  render() {
-    return (
-      <form onSubmit={this.handleSubmit}>
-        <div className="form-group">
-          <input type="text" className="form-control" name="name" placeholder="Nombres" value={this.state.name} onChange={this.handleOnChange} />
-        </div>
-        <div className="form-group">
-          <input type="text" className="form-control" name="lastname" placeholder="Apellidos" value={this.state.lastname} onChange={this.handleOnChange} />
-        </div>
-        <div className="form-group">
-          <input type="email" className="form-control" name="email" placeholder="Correo" value={this.state.email} onChange={this.handleOnChange} />
-        </div>
-        <div className="form-group">
-          <input type="password" className="form-control" name="password" placeholder="Contrase&ntilde;a" value={this.state.password} onChange={this.handleOnChange} />
-        </div>
-        <button className="btn btn-success" onClick={this.handleClick}>Registrar</button>
-      </form>
-    )
-  }
 }
 
 class FormLogin extends React.Component {
@@ -105,13 +61,51 @@ class FormLogin extends React.Component {
   }
 }
 
-const Register = () => {
-  return (
-    <div id="register" className="col-12 panel-login">
-      <Logo />
-      <FormSignin />
-    </div>
-  )
+class Register extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      name: '',
+      lastname: '',
+      email: '',
+      password: ''
+    }
+    this.handleSubmit = this.handleSubmit.bind(this)
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    this.setState({
+      name: e.target.children[0].children[0].value,
+      lastname: e.target.children[1].children[0].value,
+      email: e.target.children[2].children[0].value,
+      password: e.target.children[3].children[0].value
+    })
+    console.log(this.state)
+  }
+
+  render() {
+    return (
+      <div id="register" className="col-12 panel-login">
+        <Logo />
+        <form onSubmit={this.handleSubmit}>
+          <div className="form-group">
+            <input type="text" className="form-control" name="name" placeholder="Nombres" />
+          </div>
+          <div className="form-group">
+            <input type="text" className="form-control" name="lastname" placeholder="Apellidos" />
+          </div>
+          <div className="form-group">
+            <input type="email" className="form-control" name="email" placeholder="Correo" />
+          </div>
+          <div className="form-group">
+            <input type="password" className="form-control" name="password" placeholder="Contrase&ntilde;a" />
+          </div>
+          <button className="btn btn-success">Registrar</button>
+        </form>
+      </div>
+    )
+  }
 }
 
 const Log = () => {
@@ -121,7 +115,7 @@ const Log = () => {
       <FormLogin />
     </div>
   )
-} 
+}
 
 const Login = () => {
   return (
