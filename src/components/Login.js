@@ -31,45 +31,97 @@ const Logo = () => {
   )
 }
 
-const Input = ({ type, id, text }) => {
+class FormSignin extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      name: '',
+      lastname: '',
+      email: '',
+      password: ''
+    }
+    this.handleOnChange = this.handleOnChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
+  }
+
+  handleOnChange(e) {
+    this.setState({
+      [e.target.name]: e.target.value
+    })
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    console.log(this.state)
+  }
+
+  render() {
+    return (
+      <form onSubmit={this.handleSubmit}>
+        <div className="form-group">
+          <input type="text" className="form-control" name="name" placeholder="Nombres" value={this.state.name} onChange={this.handleOnChange} />
+        </div>
+        <div className="form-group">
+          <input type="text" className="form-control" name="lastname" placeholder="Apellidos" value={this.state.lastname} onChange={this.handleOnChange} />
+        </div>
+        <div className="form-group">
+          <input type="email" className="form-control" name="email" placeholder="Correo" value={this.state.email} onChange={this.handleOnChange} />
+        </div>
+        <div className="form-group">
+          <input type="password" className="form-control" name="password" placeholder="Contrase&ntilde;a" value={this.state.password} onChange={this.handleOnChange} />
+        </div>
+        <button className="btn btn-success" onClick={this.handleClick}>Registrar</button>
+      </form>
+    )
+  }
+}
+
+class FormLogin extends React.Component {
+  render() {
+    return (
+      <div>
+        <form>
+          <div className="form-group">
+            <input type="email" className="form-control" placeholder="Correo" />
+          </div>
+          <div className="form-group">
+            <input type="password" className="form-control" placeholder="Contrase&ntilde;a" />
+          </div>
+          <button className="btn btn-success">Ingresar</button>
+        </form>
+        <p className="lines">O</p>
+        <div>
+          <button type="button" className="btn btn-primary button-facebook">
+            <span>
+              <i className="fab fa-facebook-f"></i>
+            </span>Ingresar con facebook</button>
+          <button type="button" className="btn btn-danger button-google">
+            <span>
+              <i className="fab fa-google"></i>
+            </span>Ingresar con google</button>
+        </div>
+      </div>
+    )
+  }
+}
+
+const Register = () => {
   return (
-    <div className="form-group">
-      <input type={type} className="form-control" id={id} placeholder={text} />
+    <div id="register" className="col-12 panel-login">
+      <Logo />
+      <FormSignin />
     </div>
   )
 }
 
-const Button = ({text}) => {
+const Log = () => {
   return (
-    <button className="btn btn-success" id="buttonRegister">{text}</button>
+    <div id="login" className="col-12 panel-login">
+      <Logo />
+      <FormLogin />
+    </div>
   )
-}
-
-const Signin = () => {
-  return (
-    <form>
-      <Input type="text" id="names" text="Nombres" />
-      <Input type="text" id="lastNames" text="Apellidos" />
-      <Input type="email" id="emailRegister" text="Correo" />
-      <Input type="password" id="passRegister" text="Contrase&ntilde;a" />
-      <Button text="Registrar" />
-    </form>
-  )
-}
-
-/* const Login = () => {
-  return (
-    <form>
-      <Input type="email" id="email" text="Correo" />
-      <Input type="password" id="password" text="Contrase&ntilde;a" />
-      <Button text="Ingresar" />
-    </form>
-  )
-} */
-
-const ButtonFG = ({ }) => {
-
-}
+} 
 
 const Login = () => {
   return (
@@ -83,28 +135,8 @@ const Login = () => {
         <button className="button">Registrarse</button>
       </div>
       <div className="wrapper">
-
-        <div id="login" className="col-12 panel-login">
-          <Logo />
-          <Login />
-          <p className="lines">O</p>
-          <div id="eventLogin">
-            <button type="button" className="btn btn-primary button-facebook" id="loginFacebook">
-              <span>
-                <i className="fab fa-facebook-f"></i>
-              </span>Ingresar con facebook</button>
-            <button type="button" className="btn btn-danger button-google" id="loginGoogle">
-              <span>
-                <i className="fab fa-google"></i>
-              </span>Ingresar con google</button>
-          </div>
-        </div>
-
-        <div id="register" className="col-12 panel-login">
-          <Logo />
-          <Signin />
-        </div>
-
+        <Log />
+        <Register />
       </div>
     </div>
   )
