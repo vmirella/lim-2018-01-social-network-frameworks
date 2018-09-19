@@ -57,7 +57,7 @@ const Signin = () => {
   )
 }
 
-const Login = () => {
+/* const Login = () => {
   return (
     <form>
       <Input type="email" id="email" text="Correo" />
@@ -65,7 +65,7 @@ const Login = () => {
       <Button text="Ingresar" />
     </form>
   )
-}
+} */
 
 const ButtonFG = ({ }) => {
 

@@ -1,6 +1,6 @@
 import React from 'react';
 
-class List extends React.Component {
+class Menu extends React.Component {
   render() {
     return(
       <ul className="navbar-nav mr-auto">
@@ -20,4 +20,4 @@ class List extends React.Component {
     }
 }
 
-export default List;
+export default Menu;

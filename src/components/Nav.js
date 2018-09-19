@@ -1,7 +1,6 @@
 import React from 'react';
-import MenuResponsive from './MenuResponsive';
-import List from '../components/List';
-import Searcher from '../components/Searcher';
+import Menu from './Menu';
+import Searcher from './Searcher';
 
 class Nav extends React.Component {
   render() {
@@ -13,10 +12,13 @@ class Nav extends React.Component {
           </span>
           <span className="navbar-brand">SoyTuPata</span>
         </div>
-        <MenuResponsive/>
+        <button className="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbar-menu"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <span className="navbar-toggler-icon"></span>
+        </button> 
 
         <div className="navbar-collapse collapse" id="navbar-menu">
-          <List />
+          <Menu/>
           <div className="col-xl-3 col-lg-4 col-md-4 col-sm-12">
             <Searcher/>
           </div>

@@ -1,8 +1,8 @@
 import React from 'react';
 import '../Home.css';
-import Nav from '../components/Nav'
-import LateralMenu from '../components/LateralMenu';
-import FormAddPost from '../components/FormAddPost';
+import Nav from './Nav'
+import LateralMenu from './LateralMenu';
+import FormAddPost from './FormAddPost';
 class Home extends React.Component {
   render() {
     return (
