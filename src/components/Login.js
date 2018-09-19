@@ -41,18 +41,23 @@ class FormSignin extends React.Component {
       password: ''
     }
     this.handleOnChange = this.handleOnChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   handleOnChange(e) {
     this.setState({
       [e.target.name]: e.target.value
     })
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
     console.log(this.state)
   }
 
   render() {
     return (
-      <form>
+      <form onSubmit={this.handleSubmit}>
         <div className="form-group">
           <input type="text" className="form-control" name="name" placeholder="Nombres" value={this.state.name} onChange={this.handleOnChange} />
         </div>
@@ -65,7 +70,7 @@ class FormSignin extends React.Component {
         <div className="form-group">
           <input type="password" className="form-control" name="password" placeholder="Contrase&ntilde;a" value={this.state.password} onChange={this.handleOnChange} />
         </div>
-        <button className="btn btn-success" onSubmit={console.log(this)}>Registrar</button>
+        <button className="btn btn-success" onClick={this.handleClick}>Registrar</button>
       </form>
     )
   }
