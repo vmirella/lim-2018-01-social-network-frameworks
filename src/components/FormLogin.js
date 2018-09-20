@@ -1,10 +1,17 @@
 import React from 'react';
-import * as Data from '../data.js';
+import firebase from 'firebase';
+import PropTypes from 'prop-types';
 
 class FormLogin extends React.Component {
+
+  static contextTypes = {
+    router: PropTypes.object
+  }
+
   constructor() {
     super();
     this.handleSubmit = this.handleSubmit.bind(this);
+    //this.handleEmailChange = this.handleEmailChange.bind(this);
     this.state = {
       email: '',
       password: ''
@@ -21,6 +28,23 @@ class FormLogin extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+
+    firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
+    .then((result) => {
+      console.log('Ha logrado abrir sesión con éxito', result);
+      localStorage.setItem('email', this.state.email);
+      this.context.router.history.push('/home');
+    })
+    .catch((error) => {
+      console.log('Ha habido un error', error);
+      let errorCode = error.code;
+      if (errorCode === 'auth/wrong-password') {
+        window.alert('Contraseña incorrecta.');
+      }
+      else {
+        window.alert('Usuario no esta registrado.');
+      }
+    })
     console.log(this.state);
   }
 
