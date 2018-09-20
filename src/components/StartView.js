@@ -1,8 +1,8 @@
 import React from 'react';
 import $ from 'jquery';
 import '../Login.css';
-import firebase from 'firebase';
-import Wrapper from './Wrapper'
+import FormLogin from './FormLogin';
+import FormRegister from './FormRegister';
 
 $(document).ready(function () {
   $('.div-container .rgstr-btn button').click(function () {
@@ -31,7 +31,10 @@ const StartView = () => {
         <p>¿A&uacute;n no tienes cuenta?</p>
         <button className="button">Registrarse</button>
       </div>
-      <Wrapper />
+      <div className="wrapper">
+        <FormLogin />
+        <FormRegister />
+      </div>
     </div>
   )
 };
