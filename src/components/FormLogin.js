@@ -1,5 +1,5 @@
 import React from 'react';
-import * as data from '../data.js';
+import * as Data from '../data.js';
 
 class FormLogin extends React.Component {
   constructor() {

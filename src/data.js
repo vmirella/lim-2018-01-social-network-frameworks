@@ -49,17 +49,35 @@ const loginWithProvider = (provider, cb) => {
 
 
 //Funcion que crea una ccuenta de usuario con correo y password
-const createUser = (email, password, cb) => {
+const createUser = (email, password) => {
+	const registerResult = {
+    status: '',
+    message: ''
+  };
 	return firebase.auth().createUserWithEmailAndPassword(email, password)
 		.then((result) => {
-			console.log('El usuario ha sido creado con cuenta de email y password', result)
-			cb(null, result)
+			console.log('El usuario ha sido creado con cuenta de email y password', result);
+			registerResult.status = 'success';
+			registerResult.message = 'El usuario ha sido creado';
+			return registerResult;
 		})
 		.catch((error) => {
-			console.log('Ha habido un error')
-			console.log(error)
-			cb(error)
-
+			console.log('Ha habido un error');
+			registerResult.status = 'error';
+			let errorCode = error.code;
+			if (errorCode === 'auth/email-already-in-use') {
+				registerResult.message = 'El correo ya se encuentra registrado.';
+			}
+			else if (errorCode === 'auth/weak-password') {
+				registerResult.message = 'La contraseña es demasiado debil.';
+			}
+			else if (errorCode === 'auth/invalid-email') {
+				registerResult.message = 'El correo es invalido.';
+			}
+			else {
+				registerResult.message = 'El usuario no se ha podido registrar';
+			}
+			return registerResult;
 		});
 }
 
@@ -173,4 +191,5 @@ const showPosts = (filterBy, valueFilter, cb) => {
 	/*firebase.database().ref('/posts/').once('value').then((value) => {
 	  cb(value.val());
 	})*/
+	
 
