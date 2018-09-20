@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
-import Login from './components/Login';
+import StartView from './components/StartView';
 import Home from './components/Home';
 import firebase from 'firebase';
 // import 'firebase/database'
@@ -10,7 +10,7 @@ class App extends React.Component {
     return (
       <BrowserRouter>
         <div>
-          <Route path="/" component={Login} exact />
+          <Route path="/" component={StartView} exact />
           <Route path="/home" component={Home} />
         </div>
       </BrowserRouter>
