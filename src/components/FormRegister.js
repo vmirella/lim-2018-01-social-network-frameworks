@@ -23,13 +23,11 @@ class FormRegister extends React.Component {
       .then((result) => {
         console.log('El usuario ha sido creado con cuenta de email y password', result)
         // cb(null, result)
+        document.getElementById('linkLogin').click();
         firebase.database().ref('users/' + result.user.uid).set({
           username,
           email,
           picture
-        }, (error) => {
-          console.log(error);
-          console.log('error');
         });
       })
       .catch((error) => {
