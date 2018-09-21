@@ -1,6 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=Chela+One');
 body {
 	height: 100%;
-	/*background-color: #F6F6F6;*/
+	background-color: #F6F6F6;
 }
 
 .hidden {
@@ -27,6 +28,20 @@ body {
 	background-color: #009E66;
   border-radius: 4px;
 }
+
+.btn-group .btn-success {
+	background-color: #35CD97;
+	border-color: #35CD97;
+}
+
+.btn-success:not(:disabled):not(.disabled).active, .btn-success:not(:disabled):not(.disabled):active, .show>.btn-success.dropdown-toggle {
+	background-color: #009E66 !important;
+}
+
+.btn-success.focus, .btn-success:focus {
+	box-shadow: none;
+}
+
 .navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
 	color: #fff;
 }
@@ -71,6 +86,7 @@ body {
 
 .container-new-post {
 	margin-top: 70px;
+	background-color: #F6F6F6;
 }
 /*#buttons-category{
 	display: none;
