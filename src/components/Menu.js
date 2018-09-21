@@ -10,10 +10,7 @@ class Menu extends React.Component {
           </a>
         </li>
         <li className="nav-item" id="profile-menu">
-          <span id="my-posts" className="nav-link">Mi Perfil</span>
-        </li>
-        <li className="nav-item">
-          <a id="logOut" className="nav-link" href="#">Salir</a>
+          <span id="my-posts" className="nav-link">Mis publicaciones</span>
         </li>
       </ul>
     );

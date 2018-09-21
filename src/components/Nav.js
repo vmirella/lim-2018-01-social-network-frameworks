@@ -23,7 +23,14 @@ class Nav extends React.Component {
             <Searcher/>
           </div>
           <div className="col-xl-3 col-lg-4 col-md-4 col-sm-12">
-          {localStorage.getItem('email')}
+            <div class="btn-group">
+              <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <i class="fas fa-user-circle"></i> {localStorage.getItem('email')}
+              </button>
+              <div class="dropdown-menu dropdown-menu-right">
+                <a class="dropdown-item" id="log-out" href="#">Salir</a>
+              </div>
+            </div>
           </div>
         </div>
       </nav>
