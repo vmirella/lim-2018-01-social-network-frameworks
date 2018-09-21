@@ -5,6 +5,7 @@ import Searcher from './Searcher';
 import PropTypes from 'prop-types';
 
 class Nav extends React.Component {
+  
   static contextTypes = {
     router: PropTypes.object
   }
@@ -15,6 +16,7 @@ class Nav extends React.Component {
   }
 
   logout(e) {
+    e.preventDefault();
     firebase.auth().signOut();
     localStorage.removeItem('email');
     this.context.router.history.push('/');

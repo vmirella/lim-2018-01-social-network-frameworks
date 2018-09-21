@@ -1,6 +1,12 @@
 import React from 'react';
+import firebase from 'firebase';
 
 class Menu extends React.Component {
+
+  constructor() {
+    super();
+  }
+  
   render() {
     return(
       <ul className="navbar-nav mr-auto">
