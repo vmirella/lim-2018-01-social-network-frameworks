@@ -33,8 +33,9 @@ class FormLogin extends React.Component {
       : provider = new firebase.auth.GoogleAuthProvider()
     firebase.auth().signInWithPopup(provider)
       .then(result => {
-        this.context.router.history.push('/home');
         const user = result.user;
+        localStorage.setItem('email', user.email);
+        this.context.router.history.push('/home');
         firebase.database().ref('users/' + user.uid).set({
           username: user.displayName,
           email: user.email,

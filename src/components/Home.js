@@ -5,6 +5,7 @@ import Nav from './Nav'
 import LateralMenu from './LateralMenu';
 import FormAddPost from './FormAddPost';
 import PropTypes from 'prop-types';
+import Post from './Post'
 
 class Home extends React.Component {
 
@@ -12,63 +13,46 @@ class Home extends React.Component {
     router: PropTypes.object
   }
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       posts: []
     }
   }
 
   componentDidMount() {
-    let user = firebase.auth().currentUser;
-    if(user) {
+    const user = firebase.auth().currentUser;
+    if (user) {
       firebase.database().ref('posts').on('value', (snapshot) => {
-        let data = snapshot.val();
-        let posts = Object.values(data);
-        this.setState({posts});
+        const data = snapshot.val();
+        const posts = Object.values(data);
+        this.setState({ posts });
       });
     } else {
       this.context.router.history.push('/');
     }
   }
 
-  render() { 
+  render() {
     return (
       <div>
-        <Nav/>
+        <Nav />
         <div className="container container-new-post">
           <div className="row justify-content-center div-center">
             <div className="col-md-7" id="container-to-post">
               <div className="row">
                 <div id="dataPost" className="col-sm-12 div-form">
-                  <FormAddPost/>
+                  <FormAddPost />
                 </div>
                 <div id="showPost" className="col-sm-12 reverse">
                   {this.state.posts.map((post) => {
-                    return (
-                      <div className = "{post.id} post panel-login">
-                        <div className="row">
-                          <div className="col-10">
-                            <h5 className="card-title">{post.title}</h5>
-                          </div>
-                        </div>
-                        <span className="category"><i className="far fa-folder-open"></i> {post.category}</span>
-                        <span className="date"><i className="far fa-calendar-alt"></i> </span>
-                        <hr/>
-                        <img className="card-img-top" src="http://images.estampas.com/2012/07/01/mascotas.jpg.525.0.thumb" width="40" height="350" />
-                        <p className="card-text">{post.content}</p>     
-                        <div className = "buttonSel">
-                          <button className = "{post.id} btn btn-light col-sm-3" id="coment"><i className="far fa-comment-alt"></i> Comentar</button>
-                          <button className = "{post.id} btn btn-light col-sm-3" id="like"><i className="far fa-thumbs-up"></i> Me gusta <span id="badge-{post.id}" className="badge badge-success">${post.likes}</span></button>
-                        </div>
-                      </div>
-                    )
+                    <Post />
                   })}
                 </div>
               </div>
             </div>
             <div className="col-md-3 col-sm-6">
-              <LateralMenu/>
+              <LateralMenu />
             </div>
           </div>
         </div>
