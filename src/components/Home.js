@@ -45,9 +45,9 @@ class Home extends React.Component {
                   <FormAddPost />
                 </div>
                 <div id="showPost" className="col-sm-12 reverse">
-                  {this.state.posts.map((post) => {
-                    <Post />
-                  })}
+                  {this.state.posts.map((post) =>
+                    <Post id={post.id} title={post.title} category={post.category} content={post.content} likes={post.likes} />
+                  )}
                 </div>
               </div>
             </div>
