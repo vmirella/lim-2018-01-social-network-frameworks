@@ -7,7 +7,7 @@ class Post extends React.Component {
 
   render() {
     return (
-      <div key={this.props.id} className="{this.props.id} post panel-login">
+      <div className="{this.props.id} post panel-login">
         <div className="row">
           <div className="col-10">
             <h5 className="card-title">{this.props.title}</h5>

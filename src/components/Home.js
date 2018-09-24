@@ -16,7 +16,18 @@ class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      posts: []
+      posts: [],
+      postData: {
+        uid: null,
+        title: null,
+        image: null,
+        content: null,
+        date: null,
+        category: 'Salud',
+        state: null,
+        likes: null,
+        comentary: null
+      }
     }
   }
 
@@ -46,7 +57,14 @@ class Home extends React.Component {
                 </div>
                 <div id="showPost" className="col-sm-12 reverse">
                   {this.state.posts.map((post) =>
-                    <Post id={post.id} title={post.title} category={post.category} content={post.content} likes={post.likes} />
+                    <Post
+                      key={post.id}
+                      id={post.id}
+                      title={post.title}
+                      category={post.category}
+                      content={post.content}
+                      likes={post.likes}
+                    />
                   )}
                 </div>
               </div>
