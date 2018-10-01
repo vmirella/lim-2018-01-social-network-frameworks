@@ -5,7 +5,7 @@ import Nav from './Nav'
 import LateralMenu from './LateralMenu';
 import FormAddPost from './FormAddPost';
 import PropTypes from 'prop-types';
-import Post from './Post'
+import Post from './Post';
 
 class Home extends React.Component {
 
