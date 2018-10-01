@@ -1,4 +1,5 @@
 {
+  "homepage": "https://vmirella.github.io/lim-2018-01-social-network-frameworks",
   "name": "lim-2018-01-social-network-frameworks",
   "version": "0.1.0",
   "private": true,
@@ -14,7 +15,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "npm build && gh-pages -d build"
   },
   "devDependencies": {
     "eslint": "^5.5.0",
@@ -25,6 +27,7 @@
     "eslint-plugin-node": "^7.0.1",
     "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-react": "^7.11.1",
-    "eslint-plugin-standard": "^4.0.0"
+    "eslint-plugin-standard": "^4.0.0",
+    "gh-pages": "^2.0.0"
   }
 }
