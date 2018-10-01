@@ -1,21 +1,39 @@
 import React from 'react';
 
+const openDiv = () => {
+  document.getElementById('hidden-form').style.display = 'block'
+  document.getElementById('close-create').style.display = 'block'
+}
+
+const closeDiv = (e) => {
+  e.preventDefault();
+  document.getElementById('hidden-form').style.display = 'none'
+  document.getElementById('close-create').style.display = 'none'
+}
+
 class FormAddPost extends React.Component {
+  constructor(props) {
+    super(props);
+
+    // this.openDiv = this.openDiv.bind(this);
+    // this.closeDiv = this.closeDiv.bind(this);
+  }
+
   render() {
-    return(
+    return (
       <div className="post form-add-post">
-        <a href="" id="close-create" className="close hidden">
+        <a href="" id="close-create" className="close hidden" onClick={closeDiv} >
           <i className="fas fa-window-close"></i>
         </a>
-        <input type="text" id="inputTitle" className="form-control" placeholder="¿Qué  tema quieres compartir?" />
+        <input type="text" onFocus={openDiv} id="inputTitle" className="form-control" placeholder="¿Qué  tema quieres compartir?" />
 
         <div id="hidden-form" className="hidden">
           <div>
             <div id="contentImagen"></div>
           </div>
-          <br/>
+          <br />
           <textarea id="inputContent" className="form-control" aria-label="With textarea" placeholder="Ingresa el contenido" rows="5"></textarea>
-          <br/>
+          <br />
           <div className="row">
             <div className="col-sm-6">
               <div className="form-group row">
@@ -45,10 +63,10 @@ class FormAddPost extends React.Component {
             </div>
           </div>
           <button id="addPost" className="btn btn-success btn-form-color">Publicar</button>
-          <button id="editPost" className="btn btn-success btn-form-color">Actualizar</button>
+          {/* <button id="editPost" className="btn btn-success btn-form-color">Actualizar</button> */}
         </div>
       </div>
     );
-  }  
+  }
 }
 export default FormAddPost;
